@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random NBA Player Generator</title>
+    <link rel="stylesheet" href="Styles/web app styles.css">
+    <link rel="stylesheet" href="Styles/styles.css">
+</head>
+<body>
+    <div>
+        <ol id="Navbar">
+            <li class="navbar-link"><a href="index.html">Home</a></li>
+            <li class="navbar-link"><a href="about.html">Resume</a></li>
+            <li class="navbar-link"><a href="Basketball Page From Scratch.html">Basketball From Scratch Page</a></li>
+            <li class="navbar-link"><a href="#">Fun Web App</a></li>
+        </ol>
+    </div>
+
+    <div class="container">
+        <h1>Which NBA Player Are You?</h1>
+       <p> Click the button below to see what NBA player you would be. Then go back to the live tableau located on the "Basketball From Scratch Page" and see the shots your player takes.
+</p>
+
+        <button onclick="generateRandomPlayer()">Get a Random Player</button>
+
+        <!-- Player Info will be displayed here -->
+        <div id="playerInfo" class="player-info">
+            <h3 id="playerName">Player Name</h3>
+            <p id="playerPosition">Position</p>
+            <p id="playerTeam">Team</p>
+        </div>
+    </div>
+
+    <script>
+        // Array of player objects with name, position, and team
+        const players = [
+            {
+                name: "LeBron James",
+                position: "Forward",
+                team: "Los Angeles Lakers"
+            },
+            {
+                name: "Stephen Curry",
+                position: "Guard",
+                team: "Golden State Warriors"
+            },
+            {
+                name: "Kevin Durant",
+                position: "Forward",
+                team: "Phoenix Suns"
+            },
+            {
+                name: "Giannis Antetokounmpo",
+                position: "Forward",
+                team: "Milwaukee Bucks"
+            },
+            {
+                name: "Kawhi Leonard",
+                position: "Forward",
+                team: "Los Angeles Clippers"
+            },
+            {
+                name: "Luka Dončić",
+                position: "Guard",
+                team: "Dallas Mavericks"
+            },
+            {
+                name: "Joel Embiid",
+                position: "Center",
+                team: "Philadelphia 76ers"
+            },
+            {
+                name: "James Harden",
+                position: "Guard",
+                team: "Philadelphia 76ers"
+            },
+            {
+                name: "Jayson Tatum",
+                position: "Forward",
+                team: "Boston Celtics"
+            },
+            {
+                name: "Jimmy Butler",
+                position: "Forward",
+                team: "Miami Heat"
+            },
+            {
+                name: "Anthony Davis",
+                position: "Forward/Center",
+                team: "Los Angeles Lakers"
+            },
+            {
+                name: "Nikola Jokić",
+                position: "Center",
+                team: "Denver Nuggets"
+            },
+            {
+                name: "Zion Williamson",
+                position: "Forward",
+                team: "New Orleans Pelicans"
+            },
+            {
+                name: "Devin Booker",
+                position: "Guard",
+                team: "Phoenix Suns"
+            },
+            {
+                name: "Trae Young",
+                position: "Guard",
+                team: "Atlanta Hawks"
+            },
+            {
+                name: "Donovan Mitchell",
+                position: "Guard",
+                team: "Cleveland Cavaliers"
+            },
+            {
+                name: "Bradley Beal",
+                position: "Guard",
+                team: "Washington Wizards"
+            },
+            {
+                name: "DeMar DeRozan",
+                position: "Forward",
+                team: "Chicago Bulls"
+            },
+            {
+                name: "Carmelo Anthony",
+                position: "Forward",
+                team: "Los Angeles Lakers"
+            },
+            {
+                name: "Russell Westbrook",
+                position: "Guard",
+                team: "Los Angeles Lakers"
+            }
+            
+        ];
+
+        // Function to generate a random player
+        function generateRandomPlayer() {
+            const randomIndex = Math.floor(Math.random() * players.length);
+            const player = players[randomIndex];
+
+            // Display player info on the page
+            document.getElementById("playerName").textContent = player.name;
+            document.getElementById("playerPosition").textContent = `Position: ${player.position}`;
+            document.getElementById("playerTeam").textContent = `Team: ${player.team}`;
+        }
+    </script>
+
+</body>
+</html>
